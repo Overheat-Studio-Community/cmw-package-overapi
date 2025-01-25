@@ -61,6 +61,16 @@ class RequestsErrorsMapper extends GlobalObject
                 429,
                 RequestsErrorsTypes::TOO_MANY_REQUESTS,
             ),
+            RequestsErrorsTypes::CLIENT_CLOSED_REQUEST => new RequestErrorEntity(
+                "client closed request",
+                499,
+                RequestsErrorsTypes::CLIENT_CLOSED_REQUEST,
+            ),
+            RequestsErrorsTypes::NO_RESPONSE => new RequestErrorEntity(
+                "no response",
+                444,
+                RequestsErrorsTypes::NO_RESPONSE,
+            ),
         };
     }
 }

@@ -18,6 +18,8 @@ enum RequestsErrorsTypes: string
     case CONTENT_ALREADY_EXIST = "CONTENT_ALREADY_EXIST";
     case TOO_MANY_REQUESTS = "TOO_MANY_REQUESTS";
     case PAGE_EXPIRED = "PAGE_EXPIRED";
+    case CLIENT_CLOSED_REQUEST = "CLIENT_CLOSED_REQUEST";
+    case NO_RESPONSE = "NO_RESPONSE";
 
     public static function fromName(string $name): self
     {
