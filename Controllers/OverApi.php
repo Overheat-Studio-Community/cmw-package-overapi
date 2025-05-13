@@ -44,9 +44,15 @@ class OverApi
         die();
     }
 
-    #[NoReturn] public static function returnData(array $toReturn): void
+    #[NoReturn] public static function returnData(array $toReturn, array $headers = []): void
     {
         try {
+            header('Content-type: application/json;charset=utf-8');
+
+            foreach ($headers as $key => $value) {
+                header($key . ': ' . $value);
+            }
+
             $responseCode = $toReturn === [] || empty($toReturn) ? 204 : 200;
 
             http_response_code($responseCode);
